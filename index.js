@@ -3,7 +3,11 @@ var app = express()
 
 // respond with "hello world" when a GET request is made to the homepage
 app.get('/', function (req, res) {
-  res.send('hello world')
+  res.json({
+    msg: 'hello world',
+    NODE_ENV: process.env.NODE_ENV,
+    SY_KEY: process.env.SY_KEY,
+  })
 })
 
 var port = process.env.PORT || 1337;
